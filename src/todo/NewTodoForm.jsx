@@ -3,9 +3,10 @@ import UserInput from "../costomhooks/UserInput";
 import { useSelector, useDispatch } from "react-redux";
 import "./NewTodoForm.css";
 import { addTodos } from "./thunks";
+import { getTodos } from "./selectors";
 
 const NewTodoForm = () => {
-  const todos = useSelector((state) => state.todos.value);
+  const todos = useSelector((state) => getTodos(state));
   const dispatch = useDispatch();
   const [inputProps, resetProps] = UserInput();
 

@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import TodoSlice from "../todo/TodoSlice";
-import IsLoadingSlice from "../todo/IsLoadingSlice";
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import thunk from "redux-thunk";
@@ -12,8 +11,7 @@ const persistConfig = {
 };
 
 const reducers = combineReducers({
-  todos: TodoSlice,
-  isLoading: IsLoadingSlice,
+  todos: TodoSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
